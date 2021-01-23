@@ -1,0 +1,32 @@
+{
+	"manifest_version":2,
+	"name":"Speed Controller for Youtube",
+	"version":"1.0.0",
+	"icons":
+	{
+           "16": "s16.png",
+           "48": "s48.png",
+           "128": "s128.png"
+            },
+           "background": {
+          "scripts": ["background.js"],
+          "persistent": false },
+
+    //if url matches the pattern,then script gets loaded.//
+
+	"content_scripts":[
+	{
+	"matches":["https://www.youtube.com/watch*"],
+	 "js": ["content_script.js"]
+	 }
+	],
+
+	 "page_action":
+	  {
+    "default_icon": "s.png",
+    "default_popup": "main_popup.html"
+  },
+
+"permissions": ["activeTab","tabs", "storage", "declarativeContent","*://www.youtube.com/watch*" ]
+
+}
